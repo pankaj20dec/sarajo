@@ -1,0 +1,172 @@
+/*
+Theme Name: sarajo
+Theme URI: https://builtbyblank.com
+Author: Built By Blank
+Author URI: https://builtbyblank.com
+Description: Sarajo is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Sarajo will make your WordPress look beautiful everywhere.
+Version: 1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+Text Domain: sarajo
+
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Questrial';
+@import 'https://fonts.googleapis.com/css?family=Merriweather:400,400i';
+
+body{
+	font-family: 'Questrial', sans-serif;
+	font-style:normal;
+	font-weight:400;
+	font-size:16px;
+	line-height: 1.25;
+	color:#000;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Merriweather', serif;
+	font-style:normal;
+	font-weight:400;
+}
+
+h1,h2,.heading{
+	font-size:60px;
+	line-height:72px;
+}
+
+h3,.sub-heading{
+	font-size:32px;
+	line-height:36px;
+}
+
+a{
+	color:#000;
+}
+a:hover{
+	text-decoration:none;
+	color:#000;
+}
+a:active{
+	text-decoration:none;
+	color:#000;
+}
+a:visited{
+	text-decoration:none;
+	color:#000;
+}
+
+.banner-image{
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+.flx{
+	display:flex;
+	display: -webkit-flex; 
+	align-items:center;
+	-webkit-align-items:center;
+}
+
+.flx-right {
+    order: 1;
+	-webkit-order:1;
+}
+
+/***************  Header *****************/
+#navbar{
+	margin-top: 35px;
+}
+#header .navbar{
+	border-radius:0;
+	margin-bottom:26px;
+}
+#header .navbar-nav{
+	float:none;
+}
+#header .navbar .navbar-header{
+	float:none;
+	text-align:center;
+	padding-top: 35px;
+}
+#header .navbar-header .navbar-brand{
+	float:none;
+	height:auto;
+	padding:0;
+	margin:0;
+}
+#header .navbar-header .navbar-brand img{
+	display:inline-block;
+}
+#header .nav li a{
+	text-transform:uppercase;
+	color:#000;
+	font-size:16px;
+	padding:0;
+}
+#header .navbar-nav li{
+	float:none;
+	display:inline-block;
+	margin-left:40px;
+}
+
+#header .navbar-nav li:first-child{
+	margin-left:0;
+}
+#header .nav li a:focus, .nav li a:hover{
+	background:none;
+}
+
+/************  Footer **************/
+#footer{
+	background: #E8E9E9;
+	padding: 30px 0;	
+}
+#footer .border{
+	position: relative;
+}
+#footer .border::before {
+    background: #000 none repeat scroll 0 0;
+    content: "";
+    margin-left: -15px;
+    min-height: 130px;
+    position: absolute;
+    width: 1px;
+}
+#footer .border:last-child::after{
+	background: #000 none repeat scroll 0 0;
+    content: "";
+    min-height: 140px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+}
+#footer .footer-heading {
+    text-transform: uppercase;
+}
+#footer #menu-footer-menu,.footer-categories,.subscribe-form,.footer-info {
+    list-style: outside none none;
+    padding: 15px 0 0;
+}
+#footer #menu-footer-menu li a, .footer-categories li a{
+	text-transform: capitalize;
+	text-decoration: underline;
+}
+#footer .footer-info p{
+	margin-bottom: 2px;
+}
+#footer .form-control {
+    border: 1px solid #000;
+    border-radius: 0;
+	background: transparent;
+}
+#footer .form-inline .form-group{
+	float: left;
+}
+#footer .form-inline button{
+	background: #000;
+	color: #fff;
+	border-radius: 0;
+	border: 1px solid #000;
+}
