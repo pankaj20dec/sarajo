@@ -22,6 +22,7 @@ body{
 	font-size:16px;
 	line-height: 1.25;
 	color:#000;
+	overflow-x: hidden; 
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Merriweather', serif;
@@ -39,7 +40,14 @@ h3,.sub-heading{
 	line-height:36px;
 	margin-top: 0;
 }
-
+h5{
+	font-family: "Questrial",sans-serif;
+	font-size: 17px;
+	text-transform: uppercase;
+}
+ol, ul{
+	margin-bottom: 0;
+}
 a{
 	color:#000;
 }
@@ -55,7 +63,7 @@ a:visited{
 	text-decoration:none;
 	color:#000;
 }
-.flx{
+.flex-container{
 	display:flex;
 	display: -webkit-flex; 
 	align-items:center;
@@ -66,7 +74,7 @@ a:visited{
     order: 1;
 	-webkit-order:1;
 }
-.container{
+.container,.woocommerce-breadcrumb,.products{
 	margin: 0 auto !important;
 	max-width: 1170px;
 }
@@ -78,7 +86,7 @@ a:visited{
 }
 #header .navbar{
 	border-radius:0;
-	margin-bottom:26px;
+	margin-bottom:25px;
 }
 #header .navbar-nav{
 	float:none;
@@ -126,11 +134,120 @@ a:visited{
     top: 50%;
     transform: translateY(-65%);
 }
-.home .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+body.home .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
 	width: 100%;
+	margin-bottom: 0;
+}
+body.archive .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+	width: 22.05%;
+}
+.woocommerce ul.products li.product .price,.woocommerce ul.products li.product .button{
+	display: none;
+}
+.home-products {
+	padding-bottom: 30px;
+}
+.woocommerce ul.products li.product{
+	text-align: center;
+}
+.woocommerce ul.products li.product h3{
+	line-height: 1.4;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	font-family: "Questrial",sans-serif;
+	padding: 0 25px;
+}
+.details {
+    border: 1px solid #808080;
+    display: inline-block;
+    line-height: 1;
+    padding: 12px;
+    text-align: center;
+}
+.arrow {
+    font-size: 18px;
+    padding-left: 8px;
 }
 
-
+/**************  Category page  **************/
+.category-container .banner-img{
+	min-height: 490px;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	position: relative;
+}
+.archive.woocommerce .page-title, .archive.woocommerce .term-description {
+    display: none;
+}
+.archive.woocommerce .overlay-text{
+	color: #fff;
+}
+.woocommerce-breadcrumb{
+	padding: 15px 0 !important;
+	color: #000 !important;
+}
+.woocommerce .woocommerce-breadcrumb a {
+	color: #000 !important;
+}
+.woocommerce-breadcrumb > span {
+    padding: 0 8px;
+}
+#recent {
+    padding: 40px 0;
+    text-align: center;
+}
+#recent h3{
+	font-family: "Questrial",sans-serif;
+}
+#recent .price{
+	display: none;
+}
+body.archive.tax-product_cat ul.latest-products{
+	list-style: none;
+}
+body.archive.tax-product_cat ul.latest-products li.product{
+	width: 22.05%;
+	margin: 0 3.8% 1.5% 0;
+	float: left;
+}
+body.archive.tax-product_cat ul.latest-products li.product h5{
+	margin: 25px 0;
+}
+body.archive.tax-product_cat ul.latest-products li.product.last{
+	margin-right: 0;
+}
+body.archive.tax-product_cat ul.latest-products li.product .product_type_simple{
+	display: none;
+}
+body.archive.tax-product_cat .woocommerce ul.products li.product, .woocommerce-page ul.products li.product.product-category {
+    height: 320px;
+    width: 32.333%;
+	margin: 0 1.5% 1.5% 0;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+body.archive.tax-product_cat.woocommerce ul.products li.product.product-category h3 {
+	 font-family: 'Merriweather', serif;
+    left: 0;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    padding: 0 25px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: capitalize;
+    top: 50%;
+    transform: translateY(-50%);
+	font-size: 26px;
+	color: #fff;
+}
+mark {
+    display: none;
+}
+body.archive.tax-product_cat .woocommerce ul.products li.last, .woocommerce-page ul.products li.product-category:nth-of-type(3n){
+	margin-right: 0;
+}
 
 /************  Footer **************/
 #footer{

@@ -47,7 +47,7 @@ get_header( 'shop' ); ?>
 			 */
 			do_action( 'woocommerce_archive_description' );
 		?>
-
+			
 		<?php if ( have_posts() ) : ?>
 
 			<?php
@@ -67,7 +67,7 @@ get_header( 'shop' ); ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php wc_get_template_part( 'content', 'product' ); ?>
-
+		
 				<?php endwhile; // end of the loop. ?>
 
 			<?php woocommerce_product_loop_end(); ?>

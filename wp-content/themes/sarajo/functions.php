@@ -141,6 +141,7 @@ function sarajo_scripts() {
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 	wp_enqueue_style( 'sarajo-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array());
+	 wp_enqueue_style('sarajo-font-awesome-style', get_template_directory_uri() . '/css/font-awesome.css', array());
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'sarajo-style', get_stylesheet_uri() );
@@ -283,4 +284,31 @@ function sarajo_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'sarajo_widget_tag_cloud_args' );
 
-
+add_action('woocommerce_after_shop_loop_item_title', 'add_details');
+function add_details() {
+	echo "<a href='".get_permalink($product_id)."' class='details'>Details<span class='arrow'>&#8594;</span></a>";
+}
+add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
+function woocommerce_category_image() {
+    if ( is_product_category() ){
+	    global $wp_query;
+	    $cat = $wp_query->get_queried_object();
+	    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+	    $image = wp_get_attachment_url( $thumbnail_id,'banner' );
+		$name = $cat->name;
+		$description = $cat->description;
+	    if ( $image ) {
+		    echo '<div style="background:url(' . $image . ')" class="banner-img flex-container"><div class="container overlay-text">'.'<h1>'.$name.'</h1>'.'<div class="cat-description"><h3>'.$description.'</h3></div></div></div>';
+		}
+	}
+}
+add_action( 'init', 'jk_remove_woo_breadcrumbs' );
+function jk_remove_woo_breadcrumbs() {
+    add_action( 'woocommerce_before_shop_loop', 'woocommerce_breadcrumb', 10 );
+}
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_change_breadcrumb_delimiter' );
+function jk_change_breadcrumb_delimiter( $defaults ) {
+	// Change the breadcrumb delimeter from '/' to '>'
+	$defaults['delimiter'] = ' <span>&gt;</span> ';
+	return $defaults;
+}
